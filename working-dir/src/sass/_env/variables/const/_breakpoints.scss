@@ -1,0 +1,38 @@
+/// Размеры экрана
+
+$screen-xxs: 320px;
+$screen-xs: 480px;
+$screen-s: 640px;
+$screen-m: 768px;
+$screen-l: 1000px;
+$screen-xl: 1280px;
+
+
+
+/// device pixel ration
+
+$dpr-m: 1;
+$dpr-h: 1.5;
+$dpr-xh: 2;
+$dpr-retina: 2;
+$dpr-xxh: 3;
+
+
+
+/// resolution
+
+/// dppx
+
+$dppx-m: 1dppx;
+$dppx-h: 1.5dppx;
+$dppx-xh: 2dppx;
+$dppx-retina: 2dppx;
+$dppx-xxh: 3dppx;
+
+/// DPI
+
+$dpi-m: 96dpi;
+$dpi-h: ($dpi-m * $dpr-h);
+$dpi-xh: ($dpi-m * $dpr-xh);
+$dpr-retina: ($dpi-m * $dpr-retina);
+$dpr-xxh: ($dpi-m * $dpr-xxh);

@@ -1,0 +1,25 @@
+@if mixin-exists('generate-values') {
+
+
+
+$a-line-height-all-base-val: if($base-line-height, $base-line-height, 24px) !default;
+$a-line-height-all-important: false !default;
+$a-line-height-all-step: 1/4 !default;
+$a-line-height-all-count: 24 !default;
+
+
+
+@include generate-values(
+  '.a-lh-{w}{-f}',
+   line-height,
+   $a-line-height-all-base-val,
+   $a-line-height-all-step,
+   $a-line-height-all-count,
+   $a-line-height-all-important
+ );
+
+
+
+$a-line-height-all-loaded: true !global;
+
+}

@@ -1,0 +1,8 @@
+$a-ta-l-important: false !default;
+
+
+
+.a-ta-l {
+
+  text-align: left if($a-ta-l-important, !important, null);
+}

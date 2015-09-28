@@ -1,0 +1,94 @@
+.link-default {
+  color: #fff;
+  text-decoration: underline;
+
+  @include hover {
+    //text-decoration: underline;
+  }
+
+  &:active,
+  &.is-active {
+    color: darken(#fff, 5%);
+    //text-decoration: underline;
+  }
+}
+
+.link-dark {
+  color: #444;
+  text-decoration: underline;
+
+  @include hover {
+    //text-decoration: underline;
+  }
+
+  &:active,
+  &.is-active {
+    color: lighten(#444, 5%);
+    //text-decoration: underline;
+  }
+}
+
+.link-brand {
+  color: $ff-color-brand-default;
+  text-decoration: underline;
+
+  @include hover {
+    //text-decoration: underline;
+  }
+
+  &:active,
+  &.is-active {
+    color: lighten($ff-color-brand-default, 5%);
+    //text-decoration: underline;
+  }
+}
+
+.link-brand-dashed {
+  color: $ff-color-brand-default;
+  border-bottom: 1px dashed lighten($ff-color-brand-default, 5%);
+  text-decoration: none;
+
+  @include hover {
+   // border-bottom: 1px dashed lighten($ff-color-brand-default, 5%);
+  }
+
+  &:active,
+  &.is-active {
+   // border-bottom: 1px dashed lighten($ff-color-brand-default, 5%);
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.link-gloomy {
+  color: #736F70;
+
+  @include hover {
+    //text-decoration: underline;
+  }
+
+  &:active,
+  &.is-active {
+    color: lighten(#736F70, 5%);
+    //text-decoration: underline;
+  }
+}
+
+.link-white {
+  color: #fff;
+  text-decoration: underline;
+
+  @include hover {
+    //text-decoration: underline;
+  }
+
+  &:active,
+  &.is-active {
+    color: darken(#fff, 5%);
+    //text-decoration: underline;
+  }
+}
+
+

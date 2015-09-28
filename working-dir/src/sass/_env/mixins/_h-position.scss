@@ -1,0 +1,11 @@
+@mixin h-position( $size ) {
+  top: $size;
+  bottom: $size;
+}
+
+
+// Алиасы
+
+@mixin h-pos($size) {
+  @include h-position($size);
+}

@@ -1,0 +1,11 @@
+@mixin v-position( $size ) {
+  top: $size;
+  bottom: $size;
+}
+
+
+// Алиасы
+
+@mixin v-pos($size) {
+  @include v-position($size);
+}

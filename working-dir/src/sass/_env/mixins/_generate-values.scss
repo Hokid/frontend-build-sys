@@ -1,0 +1,80 @@
+/**
+ * @require (function) str-replace-all;
+ *
+ * В селекторе можно в любом месте ставить паттерны,
+ * которы при генерации заменяются значениями.
+ *
+ * {w} - целое часть множителя;
+ * {f} - дробная часть множителя;
+ * {i} - итерация;
+ *
+ * {-w} - -{w};
+ * {-f} - -{f};
+ * {-i} - -{i};
+ *
+ * (отличие этих паттернов с '-' от обычных в том,
+ *  что если значение целой части множителя,
+ *  дробной части множителя, итерации равно нулю, то ничего
+ *  не подставляется)
+ *
+ * example
+ * --------------
+ *
+ *   @include u-generate-size('.u-hm-{w}{-f} + .u-hm-{w}{-f}', margin-left margin-right, 24px, 1/4, 5);
+ *
+ *   output:
+ *
+ *    .u-hm-0-25 + .u-hm-0-25 {
+ *       margin-left: 6px;
+ *       margin-right: 6px;
+ *     }
+ *
+ *    .u-hm-0-5 + .u-hm-0-5 {
+ *       margin-left: 12px;
+ *       margin-right: 12px;
+ *     }
+ *
+ *    .u-hm-0-75 + .u-hm-0-75{
+ *       margin-left: 18px;
+ *       margin-right: 18px;
+ *     }
+ *
+ *    .u-hm-1 + .u-hm-1 {
+ *       margin-left: 24px;
+ *       margin-right: 24px;
+ *     }
+ *
+ *     {...}
+ *
+ * --------------
+ *
+ */
+
+@mixin generate-values($selector, $props, $base, $step, $limit, $important:false) {
+  $patterns: ('{w}', '{f}', '{i}', '{-w}', '{-f}', '{-i}');
+
+  @for $i from 1 through $limit {
+    $multiplicator: ($step * $i);
+    $whole: floor($multiplicator);
+    $fractional: ($multiplicator - $whole);
+
+    $new-selector: str-replace-all(
+      $selector,
+      $patterns,
+      (
+       $whole,
+       if($fractional != 0, str-slice(#{$fractional}, 3), 0),
+       $i,
+       if($whole != 0, '-' + $whole, ''),
+       if($fractional != 0, '-' + str-slice(#{$fractional}, 3), ''),
+       if($i != 0, '-' + $i, ''),
+      )
+    );
+
+    #{$new-selector} {
+      @each $prop in $props {
+        #{$prop}: ($base * $multiplicator) if($important, !important, null);
+      }
+    }
+  }
+}

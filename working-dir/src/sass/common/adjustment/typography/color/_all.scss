@@ -1,0 +1,22 @@
+$a-cr-important: false !default;
+
+
+
+.a-cr-danger {
+
+  color: #FF4800 if($a-cr-important, !important, null);
+}
+
+.a-cr-white {
+
+  color: #fff if($a-cr-important, !important, null);
+}
+
+.a-cr-black {
+
+  color: #000 if($a-cr-important, !important, null);
+}
+
+
+
+$a-color-all-loaded: true !global;

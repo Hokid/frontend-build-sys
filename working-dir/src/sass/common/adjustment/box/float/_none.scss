@@ -1,0 +1,6 @@
+$a-fln-important: false !default;
+
+.a-fln {
+
+  float: none if($a-fln-important, !important, null);
+}

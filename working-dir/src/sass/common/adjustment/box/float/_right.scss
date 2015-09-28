@@ -1,0 +1,6 @@
+$a-flr-important: false !default;
+
+.a-flr {
+
+  float: right if($a-flr-important, !important, null);
+}

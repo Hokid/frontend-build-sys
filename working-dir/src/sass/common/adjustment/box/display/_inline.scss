@@ -1,0 +1,8 @@
+$a-disp-i-important: false !default;
+
+
+
+.a-disp-i {
+
+  display: inline if($a-disp-i-important, !important, null);
+}

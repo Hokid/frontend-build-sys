@@ -1,0 +1,8 @@
+$a-ta-c-important: false !default;
+
+
+
+.a-ta-c {
+
+  text-align: center if($a-ta-c-important, !important, null);
+}

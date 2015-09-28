@@ -1,0 +1,27 @@
+# editorconfig.org
+
+root = true
+
+[*]
+
+# Кодировка файлов
+charset = utf-8
+
+# Определитель конца строки [ lf, cr, crlf ]
+end_of_line = lf
+
+# Тип отступа [ tab, space ]
+indent_style = space
+
+# Размер отступа [ int, tab ]
+indent_size = 2
+
+# Вставка новой строки в конец файла
+insert_final_newline = true
+
+# Обрезание пробелов в конце строк
+trim_trailing_whitespace = true
+
+[*.md]
+
+trim_trailing_whitespace = false

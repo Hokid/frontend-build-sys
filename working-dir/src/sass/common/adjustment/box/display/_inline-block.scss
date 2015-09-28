@@ -1,0 +1,8 @@
+$a-disp-ib-important: false !default;
+
+
+
+.a-disp-ib {
+
+  display: inline-block if($a-disp-ib-important, !important, null);
+}

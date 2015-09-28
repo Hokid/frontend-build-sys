@@ -1,0 +1,78 @@
+@if mixin-exists('generate-values') {
+
+
+
+$a-padding-all-base-val: if($base-line-height, $base-line-height, 24px) !default;
+$a-padding-all-base-important: false !default;
+$a-padding-all-step: 1/4 !default;
+$a-padding-all-count: 24 !default;
+
+
+
+@include generate-values(
+  '.a-pdl-{w}{-f}',
+   padding-left,
+   $a-padding-all-base-val,
+   $a-padding-all-step,
+   $a-padding-all-count,
+   $a-padding-all-base-important
+ );
+
+@include generate-values(
+  '.a-pdr-{w}{-f}',
+   padding-right,
+   $a-padding-all-base-val,
+   $a-padding-all-step,
+   $a-padding-all-count,
+   $a-padding-all-base-important
+ );
+
+@include generate-values(
+  '.a-pdt-{w}{-f}',
+   padding-top,
+   $a-padding-all-base-val,
+   $a-padding-all-step,
+   $a-padding-all-count,
+   $a-padding-all-base-important
+ );
+
+@include generate-values(
+  '.a-pdb-{w}{-f}',
+   padding-bottom,
+   $a-padding-all-base-val,
+   $a-padding-all-step,
+   $a-padding-all-count,
+   $a-padding-all-base-important
+ );
+
+@include generate-values(
+  '.a-vpd-{w}{-f}',
+   padding-top padding-bottom,
+   $a-padding-all-base-val,
+   $a-padding-all-step,
+   $a-padding-all-count,
+   $a-padding-all-base-important
+ );
+
+@include generate-values(
+  '.a-hpd-{w}{-f}',
+   padding-left padding-right,
+   $a-padding-all-base-val,
+   $a-padding-all-step,
+   $a-padding-all-count,
+   $a-padding-all-base-important
+ );
+
+@include generate-values(
+  '.a-pd-{w}{-f}',
+  padding,
+  $a-padding-all-base-val,
+  $a-padding-all-step,
+  $a-padding-all-count,
+  $a-padding-all-base-important
+);
+
+
+$a-padding-all-loaded: true !global;
+
+}

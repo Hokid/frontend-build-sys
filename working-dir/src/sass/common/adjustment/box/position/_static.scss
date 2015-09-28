@@ -1,0 +1,8 @@
+$a-pos-s-important: false !default;
+
+
+
+.a-pos-s {
+
+  position: static if($a-pos-s-important, !important, null);
+}

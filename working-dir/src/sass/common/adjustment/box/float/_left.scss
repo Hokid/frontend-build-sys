@@ -1,0 +1,6 @@
+$a-fll-important: false !default;
+
+.a-fll {
+
+  float: left if($a-fll-important, !important, null);
+}

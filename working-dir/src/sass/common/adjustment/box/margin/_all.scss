@@ -1,0 +1,78 @@
+@if mixin-exists('generate-values') {
+
+
+
+$a-margin-all-base-val: if($base-line-height, $base-line-height, 24px) !default;
+$a-margin-all-base-important: false !default;
+$a-margin-all-step: 1/4 !default;
+$a-margin-all-count: 24 !default;
+
+
+
+@include generate-values(
+  '.a-mrl-{w}{-f}',
+   margin-left,
+   $a-margin-all-base-val,
+   $a-margin-all-step,
+   $a-margin-all-count,
+   $a-margin-all-base-important
+ );
+
+@include generate-values(
+  '.a-mrr-{w}{-f}',
+   margin-right,
+   $a-margin-all-base-val,
+   $a-margin-all-step,
+   $a-margin-all-count,
+   $a-margin-all-base-important
+ );
+
+@include generate-values(
+  '.a-mrt-{w}{-f}',
+   margin-top,
+   $a-margin-all-base-val,
+   $a-margin-all-step,
+   $a-margin-all-count,
+   $a-margin-all-base-important
+ );
+
+@include generate-values(
+  '.a-mrb-{w}{-f}',
+   margin-bottom,
+   $a-margin-all-base-val,
+   $a-margin-all-step,
+   $a-margin-all-count,
+   $a-margin-all-base-important
+ );
+
+@include generate-values(
+  '.a-vmr-{w}{-f}',
+   margin-top margin-bottom,
+   $a-margin-all-base-val,
+   $a-margin-all-step,
+   $a-margin-all-count,
+   $a-margin-all-base-important
+ );
+
+@include generate-values(
+  '.a-hmr-{w}{-f}',
+   margin-left margin-right,
+   $a-margin-all-base-val,
+   $a-margin-all-step,
+   $a-margin-all-count,
+   $a-margin-all-base-important
+ );
+
+@include generate-values(
+  '.a-mr-{w}{-f}',
+  margin,
+  $a-margin-all-base-val,
+  $a-margin-all-step,
+  $a-margin-all-count,
+  $a-margin-all-base-important
+);
+
+
+$a-margin-all-loaded: true !global;
+
+}

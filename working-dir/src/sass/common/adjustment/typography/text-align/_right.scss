@@ -1,0 +1,8 @@
+$a-ta-r-important: false !default;
+
+
+
+.a-ta-r {
+
+  text-align: right if($a-ta-r-important, !important, null);
+}

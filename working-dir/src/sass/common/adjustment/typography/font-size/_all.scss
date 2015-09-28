@@ -1,0 +1,25 @@
+@if mixin-exists('generate-values') {
+
+
+
+$a-font-size-all-base-val: if($base-font-size, $base-font-size, 16px) !default;
+$a-font-size-all-important: false !default;
+$a-font-size-all-step: 1/4 !default;
+$a-font-size-all-count: 24 !default;
+
+
+
+@include generate-values(
+  '.a-fz-{w}{-f}',
+   font-size,
+   $a-font-size-all-base-val,
+   $a-font-size-all-step,
+   $a-font-size-all-count,
+   $a-font-size-all-important
+ );
+
+
+
+$a-font-size-all-loaded: true !global;
+
+}

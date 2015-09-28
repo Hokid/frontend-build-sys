@@ -1,0 +1,121 @@
+$common-base-body-font-family: 'Arial', sans-serif !default;
+$common-base-body-bgc: #fff !default;
+$common-base-body-color: #000 !default;
+$common-base-body-min-width: null !default;
+
+
+
+html {
+
+  height: 100%;
+}
+
+body {
+
+  min-height: 100%;
+}
+
+/**
+ * Сбрасываем цвет подсветки ссылки или любого кликабельного JavaScript
+ * элемента при касании. (мобильные платформы)
+ */
+
+html {
+
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* 1 */
+}
+
+/**
+ * Устанавливает font-size и line-height, на основе настроек
+ * вертикального ритма в compass.
+ */
+
+@include establish-baseline;
+
+body {
+
+  position: relative;
+  font-family: $common-base-body-font-family;
+  background-color: $common-base-body-bgc;
+  color: $common-base-body-color;
+
+  @if $common-base-body-min-width != null {
+
+    min-width: $common-base-body-min-width;
+  }
+
+  // сглаживание шрифтов
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+* 1. Внезапно в некоторых браузерах(IE) может появится border
+* у изображений.
+*/
+
+img {
+
+  border: 0; /* 1 */
+}
+
+ul, ol {
+
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+
+  list-style: none;
+}
+
+a {
+
+  text-decoration: none;
+}
+
+a:hover {
+
+  cursor: pointer;
+}
+
+input[type="text"], button {
+
+  outline: none
+}
+
+p {
+
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+  margin: 0;
+}
+
+
+/**
+ * 1. normal выставлен для того, чтобы не наследовать line-height,
+ *    который может иметь фикс. ширину(px, em и т.д). Так как у тега
+ *    small ширина шрифта отличная от размера шрифта родительского блока,
+ *    то наследовании line-height может привести к увеличению всей
+ *    строки, где находится тег small.
+ *    Кратко: меняется величина шрифта small, меняется величина leading-а small,
+ *    baseline тега small подстраивается под baseline всей строки, тем самым влияя
+ *    своими half-leading-и на высоту всей строки.
+ */
+
+small {
+
+  line-height: normal; /* 1 */
+}
+
+*,
+*:before,
+*:after {
+
+  box-sizing: border-box;
+}

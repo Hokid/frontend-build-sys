@@ -1,0 +1,34 @@
+@if function-exists('rhythm') {
+
+
+
+//------------------------------------------------------------------------
+// Некоторые величины, зависящие от значения переменной
+// compass-а $base-line-height
+//------------------------------------------------------------------------
+
+$rhythm-one-quarter: rhythm(0.25) !global;
+$rhythm-one-half: rhythm(0.5) !global;
+$rhythm-one: rhythm(1) !global;
+
+
+//------------------------------------------------------------------------
+// с вычетанием $default-rhythm-border-width
+//------------------------------------------------------------------------
+
+$rhythm-border-one-quarter: rhythm(0.25, $base-font-size, $default-rhythm-border-width) !global;
+$rhythm-border-one-half: rhythm(0.5, $base-font-size, $default-rhythm-border-width) !global;
+$rhythm-border-one: rhythm(1, $base-font-size, $default-rhythm-border-width) !global;
+
+
+//------------------------------------------------------------------------
+// с вычетанием двойного $default-rhythm-border-width
+//------------------------------------------------------------------------
+
+$rhythm-borders-one-quarter: rhythm(0.25, $base-font-size, $default-rhythm-border-width*2) !global;
+$rhythm-borders-one-half: rhythm(0.5, $base-font-size, $default-rhythm-border-width*2) !global;
+$rhythm-borders-one: rhythm(1, $base-font-size, $default-rhythm-border-width*2) !global;
+
+
+
+}

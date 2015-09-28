@@ -1,0 +1,8 @@
+$a-pos-f-important: false !default;
+
+
+
+.a-pos-f {
+
+  position: fixed if($a-pos-f-important, !important, null);
+}

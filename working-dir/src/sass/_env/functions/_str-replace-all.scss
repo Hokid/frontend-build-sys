@@ -1,0 +1,28 @@
+
+/** 
+ * @require (function) str-replace;
+ * 
+ * example:
+ * --------------
+ * 
+ *   str-replace-all('abcd', 'b' 'c', '-' '_');
+ *
+ *   output: 'a-_d'
+ * 
+ * --------------
+ * 
+ */
+
+@function str-replace-all($str, $old-list, $new-list) {
+  @if length($old-list) != length($new-list) {
+    @error 'length $old-list != length $new-list';
+  }
+  
+  $old-length: length($old-list);
+  
+  @for $i from 1 through $old-length {
+    $str: str-replace($str, nth($old-list, $i), nth($new-list, $i));
+  }
+  
+  @return $str;
+}
