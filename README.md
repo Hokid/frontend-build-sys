@@ -217,3 +217,13 @@
     @import "./{путь до файла}";
 
 #working-dir -> build
+
+#Полезные ссылки:
+
+1. [MindBEMding – getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) ([RU](http://frontender.info/MindBEMding/))
+2. [BEMIT](http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)
+4. [CSS Architecture](http://philipwalton.com/articles/css-architecture/) ([RU](http://web-standards.ru/articles/css-architecture/))
+5. [More Transparent UI Code with Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/)
+6. [component-based HTML/CSS naming and patterns](https://gist.github.com/necolas/1309546)
+7. [SMACSS](http://smacss.com/)
+8. [БЭМ](https://ru.bem.info/)
