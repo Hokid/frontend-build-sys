@@ -25,104 +25,10 @@
  * ------------------------------------------------------------------------
  */
 
-var gulp = require('gulp'),
-    compass = require('gulp-compass');
+var rDir = require('require-dir');
 
+rDir('./gulp/tasks', { recurse: true });
 
-
-/**
- * ------------------------------------------------------------------------
- *     Директории проэкта
- * ------------------------------------------------------------------------
- */
-
-// Рабочая директория
-
-var workingDir = 'working-dir/';
-
-// Путь до пакетов, установленных через бовер
-
-var bowerComp = 'bower_components/';
-
-// Пути в рабочей директории
-
-var path = {
-
-    // Пути до исходников
-
-    src: {
-      root: workingDir + 'src/',
-      get sass() {
-        return this.root + 'sass/';
-      },
-      get styles() {
-        return this.sass + 'styles/';
-      },
-      get sassTest() {
-        return this.root + 'sass-test/';
-      },
-      get html() {
-        return this.root + 'html/';
-      },
-      get img() {
-        return this.root + 'img/';
-      },
-      get fonts() {
-        return this.root + 'fonts/';
-      },
-      get js() {
-        return this.root + 'js/';
-      },
-      get jsVendors() {
-        return this.js + 'vendors/';
-      }
-    },
-
-    // Пути для собранных(скомпилированных) файлов
-
-    build: {
-      root: workingDir + 'build/',
-      get css() {
-        return this.root + 'css/';
-      },
-      get html() {
-        return this.root + 'html/';
-      },
-      get img() {
-        return this.root + 'img/';
-      },
-      get fonts() {
-        return this.root + 'fonts/';
-      },
-      get js() {
-        return this.root + 'js/';
-      },
-      get jsVendors() {
-        return this.js + 'vendors/';
-      }
-    },
-
-    // Путь до статики на продакшене
-
-    production: {
-      root: "../"
-    },
-
-    // Временная папка
-
-    tmp: {
-      root: workingDir + '@tmp/',
-      get css() {
-        return this.root + 'css/';
-      },
-      get html() {
-        return this.root + 'html/';
-      },
-      get sass() {
-        return this.root + 'sass/';
-      }
-    }
-};
 
 
 
@@ -132,75 +38,44 @@ var path = {
  * ------------------------------------------------------------------------
  */
 
-var opts = {
+// var opts = {
 
-    compass: {
+//     compass: {
 
-      sass: path.src.sass,
-      css: path.tmp.css,
-      style: "expanded",
-      time: true,
-      comments: false,
-      // require: 'sass-globbing',
-      // image: path.src.img,
-      import_path: [
-        bowerComp + 'foundation/scss/'
-      ]
-    },
+//       sass: path.src.sass,
+//       css: path.tmp.css,
+//       style: "expanded",
+//       time: true,
+//       comments: false,
+//       // require: 'sass-globbing',
+//       // image: path.src.img,
+//       import_path: [
+//         bowerComp + 'foundation/scss/'
+//       ]
+//     },
 
-    browserSync : {
+//     browserSync : {
 
-      server: {
-        baseDir: path.build.root
-      },
-      port: 8000,
-      ui: false,
-      online: false,
-      open: false,
-      //files: path.build.root + "**/*",
-      notify: false,
-      ghostMod: false,
-      logPrefix: "ff-frontend"
-    },
+//       server: {
+//         baseDir: path.build.root
+//       },
+//       port: 8000,
+//       ui: false,
+//       online: false,
+//       open: false,
+//       //files: path.build.root + "**/*",
+//       notify: false,
+//       ghostMod: false,
+//       logPrefix: "ff-frontend"
+//     },
 
-    htmlmin: {
-      removeComments: true
-    },
+//     htmlmin: {
+//       removeComments: true
+//     },
 
-    uglifyJs: {
-      mangle: false
-    }
-};
+//     uglifyJs: {
+//       mangle: false
+//     }
+// };
 
-
-
-
-
-//===============================================
-//
-// Задачи
-//
-//===============================================
-
-gulp.task('compass', function() {
-
-  gulp.src([
-    path.src.styles + '**/style.scss',
-    path.src.styles + '**/style.*.scss'
-  ])
-    .pipe(compass(opts.compass))
-    .pipe(gulp.dest(path.build.css));
-});
-
-
-
-
-gulp.task('compass:test', function() {
-
-  gulp.src([
-    path.src.styles + '@test/style.scss'
-  ])
-    .pipe(compass(opts.compass))
-    .pipe(gulp.dest(path.tmp.css));
-});
 

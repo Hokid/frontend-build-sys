@@ -257,3 +257,4 @@
 6. [component-based HTML/CSS naming and patterns](https://gist.github.com/necolas/1309546)
 7. [SMACSS](http://smacss.com/)
 8. [БЭМ](https://ru.bem.info/)
+9. [Gulp Organization & Structure](https://blog.simpleblend.net/gulp-organization-structure/)
